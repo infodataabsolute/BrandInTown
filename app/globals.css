@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* ================================
+   DESIGN TOKENS (Single Source)
+================================ */
+
+:root {
+  --primary: #F2B052;   /* Yellow brand */
+  --secondary: #000000; /* 👈 BLACK */
+  --text-dark: #000000; /* 👈 BLACK text everywhere */
+  --text-light: #0000;
+  --radius: 10px;
+  --font-primary: "AGWIT", "Poppins", system-ui, sans-serif;
+}
+
+
+
+/* Dark mode ready */
+[data-mantine-color-scheme="dark"] {
+  --text-dark: #0000;
+}
+
+/* ================================
+   GLOBAL RESET
+================================ */
+
+body {
+  background: #fff;
+  color: var(--text-dark);
+  font-family: var(--font-primary) !important;
+}
+
+/* ================================
+   FONT
+================================ */
+
+@font-face {
+  font-family: "AGWIT";
+  src: url("/fonts/AGWIT-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "AGWIT";
+  src: url("/fonts/AGWIT-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
