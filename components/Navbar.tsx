@@ -1,5 +1,6 @@
 "use client";
 
+
 import {
   Group,
   TextInput,
@@ -24,6 +25,7 @@ import {
   Grid,
   Checkbox,
   Radio,
+  Card,
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import {
@@ -38,14 +40,35 @@ import {
   IconBell,
   IconSettings,
   IconDeviceFloppy,
+  IconClock,
+  IconPhone,
+  IconThumbUp,
+  IconShare,
+  IconStarFilled,
+
 } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
+
 export default function Navbar() {
   const isMobile = useMediaQuery("(max-width: 36em)"); // <576px
   const isLaptop = useMediaQuery("(max-width: 75em)"); // <1200px
   const [opened, { open, close }] = useDisclosure(false);
+
+  const [notifOpened, notifHandlers] = useDisclosure(false);
+  const [profileOpened, profileHandlers] = useDisclosure(false);
+  const [settingsOpened, settingsHandlers] = useDisclosure(false);
+
+
+  <ActionIcon
+    variant="outline"
+    color="gray"
+    onClick={closeddddd}   
+  >
+    <Text size="xs">X</Text>
+  </ActionIcon>
+
 
   const [isOpn, setIsOpn] = useState(false)
   const router = useRouter();
@@ -61,8 +84,34 @@ export default function Navbar() {
 
   const [step, setStep] = useState<'phone' | 'otp'>('phone');
 
-  const brandColor = '#f2ae52';
-  const darkPurple = '#2e1a47';
+  const brandColor = 'primary';
+  const darkPurple = '#0f0f0fff';
+
+
+  const offers = [
+    {
+      id: 1,
+      brand: 'H&M',
+      image: 'https://images.unsplash.com/photo-1582037928769-181f2644ecb7?q=80&w=300',
+      description: 'A unit of is one of the biggest brand in the tops in women wears.',
+      location: 'MI Road',
+      offer: '35% Off on food items',
+      validity: 'Valid till 28th dec',
+      rating: 3.9,
+    },
+    {
+      id: 2,
+      brand: 'Puma',
+      image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=300',
+      brandLogo: 'https://logo.clearbit.com/puma.com',
+      description: 'A unit of is one of the biggest brand in the tops in women wears.',
+      location: 'MI Road',
+      offer: '35% Off on food items',
+      validity: 'Valid till 28th dec',
+      rating: 3.9,
+     
+    }
+  ];
 
 
   return (
@@ -84,9 +133,9 @@ export default function Navbar() {
             {/* <Image src="/images/Logo.jpeg" h={40} w="auto" /> */}
 
 
-<Link href="/" style={{ display: "inline-block" }}>
-  <Image src="/images/Logo.jpeg" h={40} w="auto" alt="Logo" />
-</Link>
+            <Link href="/" style={{ display: "inline-block" }}>
+              <Image src="/images/Logo.jpeg" h={40} w="auto" alt="Logo" />
+            </Link>
             {/* CENTER: Search + Location (Hidden on Mobile) */}
             {!isMobile && (
               <Group gap="xs" style={{ flex: 1, maxWidth: rem(600) }}>
@@ -96,7 +145,7 @@ export default function Navbar() {
                   radius="md"
                   flex={1}
                   styles={{
-                    input: { border: `${rem(1.5)} solid #F2B052` },
+                    input: { border: `${rem(1.5)} solid #f2b052` },
                   }}
                 />
 
@@ -106,7 +155,7 @@ export default function Navbar() {
                       px="sm"
                       py={6}
                       style={{
-                        border: `${rem(1.5)} solid #F2B052`,
+                        border: `${rem(1.5)} solid #f2b052`,
                         borderRadius: rem(8),
                         display: "flex",
                         alignItems: "center",
@@ -141,7 +190,8 @@ export default function Navbar() {
 
               )}
 
-              <Indicator label="3" size={16} color="#F2B052">
+
+              <Indicator label="3" size={16} color="primary">
                 <ActionIcon size="lg" variant="transparent" onClick={open}>
                   <IconUserCircle size={32} />
                 </ActionIcon>
@@ -170,7 +220,7 @@ export default function Navbar() {
             leftSection={<IconSearch size={16} />}
           />
 
-          <Button fullWidth color="#F2B052">
+          <Button fullWidth color="primary">
             Partner With Us
           </Button>
 
@@ -194,7 +244,7 @@ export default function Navbar() {
         <Group grow gap={0} wrap="nowrap" align="stretch">
           {/* Left Section: Branding & Image */}
           <Box
-            style={{ backgroundColor: '#F2B052' }}
+            style={{ backgroundColor: 'primary' }}
             p="xl"
             visibleFrom="sm"
           >
@@ -207,7 +257,7 @@ export default function Navbar() {
               />
             </Center>
             <Title order={2} c="#2e1a47" fw={800}>
-              Brand In Town
+              BrandIn Town
             </Title>
             <Text c="#2e1a47" size="lg" fw={500} mt="sm">
               Discover Deals, Earn Rewards, and Shop Smarter!
@@ -219,22 +269,22 @@ export default function Navbar() {
             <Stack align="center" gap="xs">
               <Center
                 style={{
-                  border: '2px solid #F2B052',
+                  border: '2px solid primary',
                   borderRadius: '50%',
                   width: 60,
                   height: 60
                 }}
               >
-                <img src="/images/user.svg" alt="" style={{ color: '#F2B052', fontSize: '24px' }} />
+                <img src="/images/user.svg" alt="" style={{ color: 'primary', fontSize: '24px' }} />
               </Center>
 
               <Text size="sm" fw={700} c="#2e1a47">Welcome to</Text>
-              <Title order={1} c="#F2B052" style={{ fontSize: '32px' }}>Brand In Town</Title>
+              <Title order={1} c="primary" style={{ fontSize: '32px' }}>BrandIn Town</Title>
 
               <Group gap="xs" mt={-10} mb="lg">
-                <Box h={1} w={30} bg="#F2B052" />
+                <Box h={1} w={30} bg="primary" />
                 <Text size="xs" c="dimmed">Authenticate Yourself.</Text>
-                <Box h={1} w={30} bg="#F2B052" />
+                <Box h={1} w={30} bg="primary" />
               </Group>
             </Stack>
 
@@ -244,12 +294,12 @@ export default function Navbar() {
               <TextInput
                 placeholder="+91"
                 variant="filled"
-                styles={{ input: { border: '1px solid #F2B052', height: '45px', textAlign: 'center', width: '60px' } }}
+                styles={{ input: { border: '1px solid primary', height: '45px', textAlign: 'center', width: '60px' } }}
                 readOnly
               />
               <TextInput
                 placeholder="9012345678"
-                styles={{ input: { border: '1px solid #F2B052', height: '45px' } }}
+                styles={{ input: { border: '1px solid primary', height: '45px' } }}
               // style={{ flex: 3 }}
               />
             </Group>
@@ -259,7 +309,7 @@ export default function Navbar() {
               mt="xl"
               size="md"
               radius="md"
-              style={{ backgroundColor: '#F2B052', color: '#2e1a47' }}
+              style={{ backgroundColor: 'primary', color: '#2e1a47' }}
               rightSection={<i className="fa-solid fa-play-circle" style={{ fontSize: '12px' }}></i>}
               onClick={open}>
               Send OTP
@@ -283,14 +333,28 @@ export default function Navbar() {
       >
         <Group grow gap={0} wrap="nowrap" align="stretch">
           {/* Left Section: Branding */}
-          <Box bg={brandColor} p="xl" visibleFrom="sm" style={{ flex: 1 }}>
-            <Stack align="center" justify="center" h="100%" gap="xl">
-              <Image
-                src="/images/Cart.png" // Ensure this image is in your /public folder
-                alt="Shopping Cart Illustration"
-                w={350}
-              />
-
+         <Box
+            visibleFrom="sm"
+            style={{
+              flex: 1,
+              backgroundImage:
+                "linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('/images/login.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              padding: 40,
+              color: "#fff",
+              display: "flex",
+              paddingLeft: "70px"
+              // alignItems: "center",
+            }}
+          >
+            <Stack>
+              <Title order={1} fw={800}>
+                BrandInTown
+              </Title>
+              <Text size="lg">
+                Discover Deals, Earn Rewards, Shop Smarter!
+              </Text>
             </Stack>
           </Box>
 
@@ -393,14 +457,12 @@ export default function Navbar() {
 
       <Modal
         opened={isOpn}
-        onClose={closed}
+        onClose={closeddddd}
         size="900px"
         padding={0}
         withCloseButton={false}
         centered
-        radius="md"
-        
-      >
+        radius="md" >
         {/* Header Section */}
         <Box p="md" style={{ borderBottom: '1px solid #eee' }}>
           <Group justify="space-between">
@@ -423,12 +485,27 @@ export default function Navbar() {
               >
                 Profile
               </Button>
-              <Indicator label="4" size={16} color={brandColor} offset={2} withBorder>
+              {/* <Indicator label="4" size={16} color={brandColor} offset={2} withBorder>
                 <ActionIcon variant="transparent" c={brandColor} size="lg">
+                  <IconBell size={24} onClick={open}/>
+                </ActionIcon>
+              </Indicator> */}
+
+              <Indicator label="4" size={16} color={brandColor} offset={2} withBorder>
+                <ActionIcon
+                  variant="transparent"
+                  c={brandColor}
+                  size="lg"
+
+                  onClick={notifHandlers.open}
+                >
                   <IconBell size={24} />
                 </ActionIcon>
               </Indicator>
-              <ActionIcon variant="outline" color="gray" onClick={close}>
+
+
+
+              <ActionIcon variant="outline" color="primary" onClick={closeddddd}>
                 <Text size="xs">X</Text>
               </ActionIcon>
             </Group>
@@ -546,6 +623,81 @@ export default function Navbar() {
             </Grid.Col>
           </Grid>
         </Box>
+      </Modal>
+
+
+      <Modal
+        opened={notifOpened}
+        onClose={notifHandlers.close}
+        size="lg"
+        title={<Title order={4}>Offers & Notifications</Title>}
+        centered
+      >
+        <Stack gap="md">
+          {offers.map((item) => (
+            <Card key={item.id} withBorder radius="md" padding="md" shadow="sm">
+              <Group wrap="nowrap" align="flex-start"
+                // Responsive: Stack vertically on mobile, row on larger screens
+                style={{
+                  flexDirection: 'row',
+                  '@media (min-width: 560px)': { flexDirection: 'row' }
+                } as any}
+              >
+                {/* Brand Image */}
+                <Image
+                  src={item.image}
+                  height={150}
+                  w={{ base: '100%', sm: 180 }}
+                  radius="md"
+                  alt={item.brand}
+                />
+
+                <Stack gap={4} style={{ flex: 1 }}>
+                  <Group justify="space-between">
+                    <Title order={4} color="secondary">{item.brand}</Title>
+                    <Group gap={4}>
+                      <IconStarFilled size={14} color="var(--mantine-color-orange-filled)" />
+                      <Text fw={700} size="sm">{item.rating}</Text>
+                    </Group>
+                  </Group>
+
+                  <Text size="xs" c="dimmed" lineClamp={2}>
+                    {item.description}
+                  </Text>
+
+                  <Group gap={4}>
+                    <IconMapPin size={12} color="orange" />
+                    <Text size="xs" fw={500} c="dimmed">{item.location}</Text>
+                  </Group>
+
+                  <Group gap={8} mt={4}>
+                    <Text fw={800} color="secondary" size="md">{item.offer}</Text>
+                    <Text size="xs" c="dimmed">({item.validity})</Text>
+                  </Group>
+
+                  {/* <Button variant="light" color="orange" size="compact-xs" radius="sm" w="fit-content">
+                    View Credit Card Offers
+                  </Button> */}
+
+                  {/* <Group justify="space-between" align="flex-end" mt="auto">
+                    <Stack gap={2}>
+                      <Group gap={4}>
+                        <IconClock size={12} color="gray" />
+                        <Text size="xs" c="dimmed">{item.hours}</Text>
+                      </Group>
+                      <Group gap={4}>
+                        <IconPhone size={12} color="gray" />
+                        <Text size="xs" c="dimmed">{item.phone}</Text>
+                      </Group>
+                    </Stack>
+
+                  </Group> */}
+                </Stack>
+
+              </Group>
+            </Card>
+          ))}
+        </Stack>
       </Modal>
     </>
   );

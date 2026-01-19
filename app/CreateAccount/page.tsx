@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import {
   Modal,
   Button,
@@ -15,180 +15,219 @@ import {
   CloseButton,
   Anchor,
   Center,
-} from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { IconLock, IconSend, IconBuildingStore, IconChevronLeft } from '@tabler/icons-react';
-  import { useRouter } from "next/navigation";
+  PinInput,
+  Divider,
+} from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import {
+  IconSend,
+  IconLock,
+  IconChevronLeft,
+  IconCheck,
+} from "@tabler/icons-react";
+import { useRouter } from "next/navigation";
 
-export default function AuthModals() {
-   const router = useRouter();
-  const [opened, { open, close }] = useDisclosure(true);
-  // View handle karne ke liye state: 'login' | 'signup' | 'reset'
-  const [view, setView] = useState('signup');
-    
+export default function AuthModal() {
+  const router = useRouter();
+
+  const [opened, { close }] = useDisclosure(true);
+  const [otpOpened, setOtpOpened] = useState(false);
+  const [view, setView] = useState<"signup" | "reset" | "login">("signup");
+
   return (
-    <Modal
-      opened={opened}
-      onClose={close}
-      withCloseButton={false}
-      size="850px"
-      padding={0}
-      radius="lg"
-      centered
-      styles={{
-        content: { overflow: 'hidden' },
-      }}
-    >
-      <Group gap={0} wrap="nowrap" align="stretch">
-        {/* LEFT SECTION: Visual Brand Side */}
-        <Box
-          style={{
-            flex: 1,
-            backgroundColor: '#F2B052',
-            // Fix: linear-gradient ko string quotes mein rakha hai
-            backgroundImage: "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/login.jpeg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            padding: '40px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            color: 'white',
-          }}
-          visibleFrom="sm"
-        >
-          <Stack gap="xs">
-            <Title order={1} fw={800} style={{ fontSize: '2.5rem', lineHeight: 1.2 }}>
-              Brand In Town
-            </Title>
-            <Text size="xl" fw={500} opacity={0.9}>
-              Show best deal to your customers
+    <>
+      {/* ================= AUTH MODAL ================= */}
+      <Modal
+        opened={opened}
+        onClose={close}
+        withCloseButton={false}
+        size="780px"
+        padding={0}
+        radius="lg"
+        centered
+      >
+        <Group gap={0} wrap="nowrap" align="stretch">
+          {/* LEFT */}
+          <Box
+            visibleFrom="sm"
+            style={{
+              flex: 1,
+              backgroundImage:
+                "linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('/images/login.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              padding: 40,
+              color: "#fff",
+              display: "flex",
+              paddingLeft: "70px"
+              // alignItems: "center",
+            }}
+          >
+            <Stack>
+              <Title order={1} fw={800}>
+                BrandInTown
+              </Title>
+              <Text size="lg">
+                Discover Deals, Earn Rewards, Shop Smarter!
+              </Text>
+            </Stack>
+          </Box>
+          {/* RIGHT */}
+          <Box
+            style={{
+              flex: 1.2,
+              padding: 40,
+              position: "relative",
+              backgroundColor: "#fff",
+            }}
+          >
+            <CloseButton onClick={close} pos="absolute" top={15} right={15} />
+
+            <Stack align="center">
+              <Center w={160}>
+                <Image src="/images/Logo.jpeg" alt="Logo" />
+              </Center>
+
+              {view === "signup" && (
+                <SignupView setOtpOpened={setOtpOpened} />
+              )}
+
+              {view === "reset" && (
+                <ResetPasswordView setView={setView} />
+              )}
+            </Stack>
+          </Box>
+        </Group>
+      </Modal>
+
+      {/* ================= OTP MODAL ================= */}
+      <Modal
+        opened={otpOpened}
+        onClose={() => setOtpOpened(false)}
+        centered
+        size="70%"
+      >
+        <Group grow gap={0} wrap="nowrap" align="stretch">
+          {/* LEFT IMAGE */}
+          <Box
+            visibleFrom="sm"
+            style={{
+              flex: 1,
+              backgroundImage:
+                "linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('/images/login.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              padding: 40,
+              color: "#fff",
+              display: "flex",
+              paddingLeft: "70px"
+              // alignItems: "center",
+            }}
+          >
+            <Stack>
+              <Title order={1} fw={800}>
+                BrandInTown
+              </Title>
+              <Text size="lg">
+                Discover Deals, Earn Rewards, Shop Smarter!
+              </Text>
+            </Stack>
+          </Box>
+
+          {/* RIGHT OTP */}
+          <Stack gap="md" align="center" justify="center" p="xl">
+            <Text fw={600} size="sm">
+              A 4 digit code has been sent to you
             </Text>
-          </Stack>
-        </Box>
 
-        {/* RIGHT SECTION: Form Side */}
-        <Box style={{ flex: 1.2, padding: '40px', position: 'relative', backgroundColor: 'white' }}>
-          <CloseButton
-            onClick={close}
-            pos="absolute"
-            top={15}
-            right={15}
-            variant="transparent"
-          />
+            <PinInput length={4} size="xl" />
 
-          <Stack align="center" gap="sm">
-            {/* Header Illustration */}
-            <Center
-              style={{
-                width: 100,
-                height: 100,
-                borderRadius: '50%',
-                border: '1px solid #eee',
-                overflow: 'hidden',
-              }}
+            <Button
+              fullWidth
+              size="lg"
+              radius="md"
+              rightSection={<IconCheck size={18} />}
+              onClick={() => router.push("/Login")}
             >
-              <Image
-                src="/images/loginup.jpeg"
-                alt="Auth Illustration"
-              />
-            </Center>
+              Verify OTP
+            </Button>
 
-            {/* View Switching Logic */}
-            {view === 'signup' && <CreateAccountView setView={setView} />}
-            {view === 'reset' && <ResetPasswordView setView={setView} />}
-            {view === 'login' && (
-                <Stack w="100%" align="center">
-                    <Title order={2}>Welcome Back</Title>
-                    <Text>Login Form can go here</Text>
-                    <Anchor component="button" onClick={() => setView('signup')}>Don't have an account? Register</Anchor>
-                </Stack>
-            )}
+            <Stack gap={2} align="center" mt="sm">
+              <Text size="xs" c="dimmed">
+                Request code again <b>00:59s</b>
+              </Text>
+
+              <Divider label="Or" labelPosition="center" w="100%" />
+
+              <Text size="xs" fw={700} style={{ cursor: "pointer" }}>
+                Edit phone number <span>+91-9012345678</span>
+              </Text>
+            </Stack>
           </Stack>
-        </Box>
-      </Group>
-    </Modal>
+        </Group>
+      </Modal>
+    </>
   );
 }
 
-// VIEW: Reset Password
-function ResetPasswordView({ setView }) {
-  return (
-    <Stack w="100%" gap="xs">
-      <Stack align="center" gap={2}>
-        <Group gap={2}>
-          <Title order={2} c="blue.9" fw={800}>Reset Password</Title>
-          <Text size="xl">🔐</Text>
-        </Group>
-        <Text c="dimmed" size="sm">Create a new password.</Text>
-      </Stack>
+/* ================= SIGNUP ================= */
+function SignupView({
+  setOtpOpened,
+}: {
+  setOtpOpened: (v: boolean) => void;
+}) {
+  const router = useRouter();
 
-      <PasswordInput placeholder="New Password" size="md" radius="md" />
-      <PasswordInput placeholder="Confirm Password" size="md" radius="md" />
+  return (
+    <Stack w="100%" gap="sm">
+      <Text size="md" c="dimmed" ta="center" fw={600}>
+        Enter details to receive OTP
+      </Text>
+
+      <TextInput placeholder="Email ID" />
+      <PasswordInput placeholder="Password" />
+      <TextInput placeholder="Phone Number" />
 
       <Button
         fullWidth
-        size="md"
-        radius="md"
-        color="orange.5"
-        rightSection={<IconLock size={18} />}
-        style={{ backgroundColor: '#F2B052' }}
+        rightSection={<IconSend size={16} />}
+        onClick={() => setOtpOpened(true)}
       >
-        Save
+        Send OTP
       </Button>
 
-      <Button 
-        variant="subtle" 
-        color="gray" 
-        leftSection={<IconChevronLeft size={16} />}
-        onClick={() => setView('signup')}
-      >
-        Back to Signup
-      </Button>
+      <Text size="sm" ta="center">
+        Already have an account?{" "}
+        <Anchor onClick={() => router.push("/Login")}>Login</Anchor>
+      </Text>
     </Stack>
   );
 }
 
-// VIEW: Create Account
-function CreateAccountView() {
-  const router = useRouter();
+/* ================= RESET PASSWORD ================= */
+function ResetPasswordView({
+  setView,
+}: {
+  setView: (v: "signup") => void;
+}) {
   return (
-    <Stack  w="100%" gap="xs">
-      <Stack align="center" gap={5}>
-        <Group gap={8} justify="center">
-          <Title order={3} fw={800} style={{ textAlign: 'center' }}>
-            Create Account for Brand In Town <IconBuildingStore size={22} color="#F2B052" style={{ verticalAlign: 'middle' }} />
-          </Title>
-        </Group>
-        <Text c="dimmed" size="xs" ta="center" px="md">
-          Please enter your email ID and phone number. You will receive the verification code on your phone.
-        </Text>
-      </Stack>
+    <Stack w="100%">
+      <Title order={2}>Reset Password</Title>
 
-      <TextInput placeholder="Email Id" size="md" radius="sm" />
-      <PasswordInput placeholder="Password" size="md" radius="sm" />
-      <TextInput placeholder="Phone Number" size="md" radius="sm" />
+      <PasswordInput placeholder="New Password" />
+      <PasswordInput placeholder="Confirm Password" />
+
+      <Button rightSection={<IconLock size={16} />}>
+        Save Password
+      </Button>
 
       <Button
-        fullWidth
-        size="md"
-        radius="md"
-        style={{ backgroundColor: '#F2B052' }}
-        rightSection={<IconSend size={18} />}
-        onClick={() => {}} // Temporary for testing
+        variant="subtle"
+        leftSection={<IconChevronLeft size={16} />}
+        onClick={() => setView("signup")}
       >
-        Send OTP
+        Back to Signup
       </Button>
- 
-      <Text size="sm" ta="center">or</Text>
-
-      <Text  size="sm" ta="center">
-        Already have an account? <Anchor component="button" fw={700} color="orange.5"  onClick={() => router.push("/Login")}>Log In</Anchor>
-      </Text>
-
-      <Text size="xs" c="dimmed" ta="center" >
-        By proceeding, you agree to Brand In Town <Anchor size="xs">Terms of Service</Anchor> and acknowledge Brand In Town <Anchor size="xs">Privacy Policy</Anchor>.
-      </Text>
     </Stack>
   );
 }

@@ -15,144 +15,144 @@ import {
   Image,
   Stack,
   Container,
+  Modal,
+  PinInput,
 } from "@mantine/core";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { IconCheck, IconPlayerPlayFilled } from "@tabler/icons-react";
 
 export default function LoginPage() {
-  const router = useRouter();
+  const brandColor = "#f2b052";
+  const darkPurple = "#2e1a47";
+
+  const [isOpn, setIsOpn] = useState(false);
+  const [step, setStep] = useState("phone"); // ADDED: step state
+  const Router = useRouter();
+
+  const Openeddddd = () => setIsOpn(true);
+  const closeddddd = () => setIsOpn(false);
 
   return (
-    <Grid h="100vh" m={0} gutter={0}>
-      {/* LEFT BANNER: Mobile par hide ho jayega (hiddenFrom="sm") */}
-      <Grid.Col span={{ base: 0, sm: 6 }} p={0} visibleFrom="sm">
-        <Box
-          h="100vh"
-          style={{
-            backgroundColor: "#F2B052",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          {/* Text Container */}
+    <>
+      <Grid h="100vh" m={0} gutter={0}>
+        {/* LEFT BANNER */}
+        <Grid.Col span={{ base: 0, sm: 6 }} p={0} visibleFrom="sm">
           <Box
+            h="100vh"
             style={{
-              position: "absolute",
-              top: "30%",
-              left: "50%",
-              transform: "translateX(-50%)",
-              textAlign: "center",
-              color: "white",
-              zIndex: 2,
-              width: "100%",
+              backgroundColor: brandColor,
+              position: "relative",
+              overflow: "hidden",
             }}
           >
-            <Title order={1} fw={800} style={{ fontSize: "2.5rem" }}>
-              Brand In Town
-            </Title>
-            <Text size="xl">Show best deal to your customers</Text>
+            {/* Text Container */}
+            <Box
+              style={{
+                position: "absolute",
+                top: "5%",
+                left: "50%",
+                transform: "translateX(-50%)",
+                textAlign: "center",
+                color: "white",
+                zIndex: 2,
+                width: "100%",
+              }}
+            >
+              <Title order={1} fw={800} style={{ fontSize: "2.5rem" }}>
+                BrandInTown
+              </Title>
+              <Text size="xl">Show best deal to your customers</Text>
+            </Box>
+
+            {/* Banner Image */}
+            <Image
+              src="/images/Login.jpeg"
+              alt="Brand Banner"
+              style={{
+                position: "absolute",
+                bottom: 0,
+                width: "100%",
+                objectFit: "cover",
+              }}
+            />
           </Box>
+        </Grid.Col>
 
-          {/* Banner Image */}
-          <Image
-            src="/images/Login.jpeg"
-            alt="Brand Banner"
-            style={{
-              position: "absolute",
-              bottom: 0,
-              width: "100%",
-              // height: "70%",
-              objectFit: "cover",
-            }}
-          />
-        </Box>
-      </Grid.Col>
+        {/* RIGHT LOGIN FORM */}
+        <Grid.Col span={{ base: 12, sm: 6 }}>
+          <Center h="100%" px="md">
+            <Container size="xs" w="100%" p={0}>
+              <Stack gap="md">
+                <Center>
+                  <Image src="/images/Logo.jpeg" w={200} alt="Login" />
+                </Center>
 
-      {/* RIGHT LOGIN FORM: Mobile par full width lega (span 12) */}
-      <Grid.Col span={{ base: 12, sm: 6 }}>
-        <Center h="100%" px="md">
-          <Container size="xs" w="100%" p={0}>
-            <Stack gap="md">
-              <Center>
-                <Image
-                  src="/images/Logo.jpeg"
-                  w={200}
-                  // h={100}
-                  // style={{ borderRadius: "50%" }}
-                  alt="Login"
+                <Text size="md" c="dimmed" ta="center" fw={600}>
+                  Please login to continue
+                </Text>
+
+                <TextInput
+                  label="User Id"
+                  placeholder="Enter your user ID"
+                  size="md"
+                  styles={{ input: { fontFamily: "Poppins, sans-serif" } }}
                 />
-              </Center>
-{/* 
-              <Title order={3} ta="center">
-                Log In to Brand In Town 🏪
-              </Title> */}
 
-              <Text size="sm" c="dimmed" ta="center">
-                Please login to continue
-              </Text>
+                <TextInput
+                  label="Password"
+                  type="password"
+                  placeholder="Enter your password"
+                  size="md"
+                  styles={{ input: { fontFamily: "Poppins, sans-serif" } }}
+                />
 
-              <TextInput
-                label="User Id"
-                placeholder="Enter your user ID"
-                size="md"
-                styles={{
-                  input: { fontFamily: "Poppins, sans-serif" },
-                }}
-              />
+                <Group justify="space-between" wrap="wrap">
+                  <Checkbox label="Remember me" size="sm" />
+                  <Anchor
+                    size="sm"
+                    onClick={() => Router.push("/ForgotPassword")}
+                    fw={500}
+                  >
+                    Forgot Password?
+                  </Anchor>
+                </Group>
 
-              <TextInput
-                label="Password"
-                type="password"
-                placeholder="Enter your password"
-                size="md"
-                styles={{
-                  input: { fontFamily: "Poppins, sans-serif" },
-                }}
-              />
-
-              <Group justify="space-between" wrap="wrap">
-                <Checkbox label="Remember me" size="sm" />
-                <Anchor
-                  size="sm"
-                  onClick={() => router.push("/ForgotPassword")}
-                  fw={500}
+                <Button
+                  fullWidth
+                  size="md"
+                  radius="md"
+                  style={{ backgroundColor: brandColor, color: darkPurple }}
+                  onClick={() => Router.push("/PartnerDashboard")}
                 >
-                  Forgot Password?
-                </Anchor>
-              </Group>
+                  Login
+                </Button>
 
-              <Button
-                color="orange"
-                fullWidth
-                size="md"
-                radius="md"
-                style={{ backgroundColor: "#F2B052" }}
-                onClick={() => router.push("/PartnerDashboard")}
-              >
-                Login
-              </Button>
+                <Divider label="Or" labelPosition="center" />
 
-              <Divider label="Or" labelPosition="center" />
+                <Text size="sm" ta="center">
+                  Don’t have an account?{" "}
+                  <Anchor
+                    fw={700}
+                    onClick={() => Router.push("/CreateAccount")}
+                    color={brandColor}
+                  >
+                    Create Account
+                  </Anchor>
+                </Text>
 
-              <Text size="sm" ta="center">
-                Don’t have an account?{" "}
-                <Anchor
-                  fw={700}
-                  onClick={() => router.push("/CreateAccount")}
-                  color="orange"
-                >
-                  Create Account
-                </Anchor>
-              </Text>
+                <Text size="xs" c="dimmed" ta="center" mt="sm">
+                  By proceeding, you agree to Brand InTown{" "}
+                  <Anchor size="xs">Terms of Service</Anchor> and{" "}
+                  <Anchor size="xs">Privacy Policy</Anchor>.
+                </Text>
+              </Stack>
+            </Container>
+          </Center>
+        </Grid.Col>
+      </Grid>
 
-              <Text size="xs" c="dimmed" ta="center" mt="sm">
-                By proceeding, you agree to Brand InTown{" "}
-                <Anchor size="xs">Terms of Service</Anchor> and{" "}
-                <Anchor size="xs">Privacy Policy</Anchor>.
-              </Text>
-            </Stack>
-          </Container>
-        </Center>
-      </Grid.Col>
-    </Grid>
+      
+    </>
   );
 }

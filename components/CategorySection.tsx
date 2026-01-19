@@ -51,7 +51,7 @@ export default function CategorySection() {
               // Hover animations
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.borderColor = '#F2B052';
+                e.currentTarget.style.borderColor = 'primary';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';

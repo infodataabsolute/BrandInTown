@@ -16,6 +16,7 @@ import {
   SimpleGrid,
   Paper,
   AspectRatio,
+  
 } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
 import { IconSearch, IconMapPin, IconChevronDown, IconUserCircle } from '@tabler/icons-react';
@@ -33,7 +34,7 @@ const FASHION_DATA = [
 
 export default function ProductGrid() {
   return (
-    <Box bg="#ffff" minH="100vh">
+    <Box bg="text-white" min-h="100vh">
    
      
 
@@ -43,8 +44,8 @@ export default function ProductGrid() {
 
       {/* --- SPORTS SECTION --- */}
       <ProductSection title="Sports" subtitle="Sports Wear & Equipment Stores" data={FASHION_DATA.slice(0, 4)} />
-       <ProductSection title="Home Appliance & Gadget Stores" subtitle="Tv, Fridge, Laptops, Mobile, Tablets & Washing Machine" data={FASHION_DATA.slice(0, 4)} />
-        <ProductSection title="Home Decor" subtitle="Sofa, Bed, Couch, Chairs & Dining Table" data={FASHION_DATA.slice(0, 4)} />
+       <ProductSection title="Home Appliance & Prsonal Gadget" subtitle="Tv, Fridge, Laptops, Mobile, Tablets & Washing Machine Stores" data={FASHION_DATA.slice(0, 4)} />
+        <ProductSection title="Home Decor" subtitle="Sofa, Bed, Couch, Chairs & Dining Table Stores" data={FASHION_DATA.slice(0, 4)} />
 
     </Box>
   );
@@ -72,26 +73,7 @@ function ProductSection({ title, subtitle, data }: { title: string; subtitle: st
         }}
       >
 
-      {/* <Carousel
-  slideSize={{
-    base: "100%",       
-    sm: "50%",       
-    md: "33.3333%",  
-    lg: "25%",       
-    xl: "20%",       
-    xxl: "16.66%", 
-  }}
-  slideGap="md"
-  align="start"
-  slidesToScroll={1}
-  withIndicators
-  loop
-  dragFree
-  styles={{
-    control: { backgroundColor: "white", color: "#000" },
-    indicator: { backgroundColor: "#000", width: rem(8), height: rem(8) },
-  }}
-> */}
+      
         {data.map((item, index) => (
           <Carousel.Slide key={index}>
             <Paper radius="md" shadow="sm" withBorder style={{ overflow: 'hidden' }}>

@@ -54,10 +54,10 @@ export default function HeroBanner() {
           width: rem(10),
           height: rem(10),
           transition: 'width 250s ease',
-          backgroundColor: 'white',
+          backgroundColor: 'primary',
         },
         control: {
-            backgroundColor: 'rgba(255,255,255,0.5)',
+            // backgroundColor: 'lightgray',
             border: 'none'
         }
       }}
@@ -67,6 +67,7 @@ export default function HeroBanner() {
           <Box style={{ position: 'relative', height: rem(450) }}>
             <BackgroundImage
               src={slide.image}
+              
               h="98%"
               w="100%"
               style={{ display: 'flex', alignItems: 'center' }}

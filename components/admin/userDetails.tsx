@@ -18,7 +18,7 @@ export default function UserDetailsForm() {
             withBorder 
             p={5} 
             radius="md" 
-            style={{ borderColor: '#F2B052', width: 'fit-content', margin: '0 auto' }}
+            style={{ borderColor: 'primary', width: 'fit-content', margin: '0 auto' }}
           >
             <Image
               src="https://api.dicebear.com/7.x/avataaars/svg?seed=Nalini" // Dummy Avatar
@@ -69,8 +69,8 @@ export default function UserDetailsForm() {
                   label="Same as phone number" 
                   size="xs" 
                   mt={5} 
-                  color="#F2B052" 
-                  styles={{ label: { color: '#F2B052' } }} 
+                  color="primary" 
+                  styles={{ label: { color: 'primary' } }} 
                 />
               </Box>
             </SimpleGrid>
@@ -80,7 +80,7 @@ export default function UserDetailsForm() {
               <Text fw={600} size="sm" mb={10} c="#1A1F4C">Select Gender *</Text>
               <Radio.Group defaultValue="female">
                 <Group>
-                  <Radio value="female" label="Female" color="#F2B052" />
+                  <Radio value="female" label="Female" color="primary" />
                   <Radio value="male" label="Male" color="#1A1F4C" />
                   <Radio value="others" label="Others" color="#1A1F4C" />
                 </Group>
@@ -91,7 +91,7 @@ export default function UserDetailsForm() {
               <Text fw={600} size="sm" mb={10} c="#1A1F4C">Select Age Group *</Text>
               <Radio.Group defaultValue="20-30">
                 <Group>
-                  <Radio value="20-30" label="20-30 yrs" color="#F2B052" />
+                  <Radio value="20-30" label="20-30 yrs" color="primary" />
                   <Radio value="30-40" label="30-40 yrs" color="#1A1F4C" />
                   <Radio value="40-50" label="40-50 yrs" color="#1A1F4C" />
                   <Radio value="50+" label="50 & Above" color="#1A1F4C" />
@@ -125,7 +125,7 @@ export default function UserDetailsForm() {
             <Group justify="flex-end" mt={30}>
               <Button 
                 variant="outline" 
-                color="#F2B052" 
+                color="primary" 
                 radius="md" 
                 size="lg" 
                 rightSection={<IconArrowLeft size={18} style={{ transform: 'rotate(180deg)' }} />}
@@ -145,9 +145,9 @@ export default function UserDetailsForm() {
 const inputStyles = {
   label: { marginBottom: rem(5), color: '#1A1F4C', fontWeight: 600 },
   input: { 
-    borderColor: '#F2B052', 
+    borderColor: 'primary', 
     height: rem(45), 
     borderRadius: rem(8),
-    '&:focus': { borderColor: '#F2B052' }
+    '&:focus': { borderColor: 'primary' }
   }
 };

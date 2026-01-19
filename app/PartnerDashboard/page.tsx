@@ -84,19 +84,38 @@ export default function PartnerDashboard() {
             <Grid.Col span={{ base: 12, md: 4 }}>
               <Box 
                 style={{ 
-                  border: `2px dashed ${themeStyles.primary}`, 
+                  border: `2px dashed #f2b052`, 
                   borderRadius: rem(8),
-                  height: rem(250),
+                  height: rem(300),
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}
               >
-                <Stack align="center" gap={5}>
+                {/* <Stack align="center" gap={5}>
                   <IconUpload color={themeStyles.primary} />
                   <Text size="sm" fw={500}>Upload your Image Here</Text>
-                </Stack>
+                </Stack> */}
+                
+                 <Image
+                    src="/images/profile-avatar.png" // Replace with your 3D avatar path
+                    alt="Profile" h="100%" w={300} />
+                    <IconUpload color={themeStyles.primary}/>
+                    
               </Box>
+               <ActionIcon
+                  pos="absolute"
+                  // top={-5}
+                  // right={15}
+                  left={530}
+                  size={40}
+                  radius="xl"
+                  // bg={brandColor}
+                  // c={darkPurple}
+                  style={{ border: '4px solid white' }}
+                >
+                  <IconCamera size={24} />
+                </ActionIcon>
             </Grid.Col>
 
             <Grid.Col span={{ base: 12, md: 8 }}>
@@ -180,17 +199,18 @@ export default function PartnerDashboard() {
       {/* --- Step 3: Offer Details (New Section) --- */}
       {active === 2 && (
         <Box>
+
+          <Group justify="space-between" mb="md">
           <Box mb="xl">
             <Title order={2} c={themeStyles.darkBlue}>Offer Details</Title>
             <Text size="sm" c="dimmed" fw={500}>List of stores associated with this brand</Text>
           </Box>
 
-          <Group justify="space-between" mb="md">
-            <Group gap="sm">
+            <Group >
               <Button  onClick={open} variant="outline" color="primary" radius="md" leftSection={<IconUpload size={18} />}>Upload</Button>
               <Button onClick={open} variant="outline" color="primary" radius="md" leftSection={<IconPlus size={18} />}>Add Offer</Button>
-            </Group>
             <Select placeholder="City" data={['Jaipur', 'Delhi']} radius="md" w={110} styles={{ input: { borderColor: 'primary' } }} />
+            </Group>
           </Group>
 
           <ScrollArea>

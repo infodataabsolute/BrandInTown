@@ -22,7 +22,7 @@ export function AdminNavbar() {
           <Group gap="sm" visibleFrom="sm">
             <Button 
               variant="outline" 
-              color="#F2B052" 
+              color="primary" 
               leftSection={<IconSettings size={18} />}
               radius="md"
             >
@@ -31,7 +31,7 @@ export function AdminNavbar() {
             
             <Button 
               variant="filled" 
-              bg="#F2B052" 
+              bg="primary" 
               c="dark"
               leftSection={<IconBuildingStore size={18} />}
               radius="md"
@@ -42,7 +42,7 @@ export function AdminNavbar() {
 
             <Button 
               variant="outline" 
-              color="#F2B052" 
+              color="primary" 
               leftSection={<IconUsers size={18} />}
               radius="md"
               onClick={() => router.push("/Customer")}
@@ -50,7 +50,7 @@ export function AdminNavbar() {
               Customers
             </Button>
 
-            <Indicator label="4" size={16} color="#F2B052" withBorder offset={2}>
+            <Indicator label="4" size={16} color="primary" withBorder offset={2}>
               <ActionIcon variant="transparent" color="gray" size="lg">
                 <IconBell size={28} stroke={1.5} />
               </ActionIcon>
@@ -59,7 +59,7 @@ export function AdminNavbar() {
 
           {/* Mobile Notification Icon only */}
           <Box hiddenFrom="sm">
-            <Indicator label="4" size={14} color="#F2B052">
+            <Indicator label="4" size={14} color="primary">
               <IconBell size={24} />
             </Indicator>
           </Box>

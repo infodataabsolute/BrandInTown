@@ -34,12 +34,12 @@ export default function BrandHeader() {
           <Group gap="md">
             <Button
               variant="outline"
-              color="orange.5"
+              color="primary"
               radius="md"
               leftSection={<IconSettings size={18} />}
               styles={{
                 root: {
-                  borderColor: '#F2B052',
+                  borderColor: 'primary',
                   color: '#2D3436', // Dark text color
                 },
                 section: {
@@ -55,7 +55,7 @@ export default function BrandHeader() {
               radius="md"
               leftSection={<IconUserCircle size={18} />}
               style={{ 
-                backgroundColor: '#F2B052',
+                backgroundColor: 'primary',
                 color: '#2D3436' // Dark text for contrast
               }}
             >

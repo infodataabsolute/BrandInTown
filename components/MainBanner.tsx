@@ -26,7 +26,7 @@ export default function MainHeroBanner() {
   bdrs={"30"}
 
   style={{
-    backgroundColor: "#F2B052",
+    backgroundColor: "#f2b052",
     overflow: "hidden",
     boxShadow: "0 8px 20px rgba(0, 0, 0, 0.25)", // 👈 bottom shadow
     
@@ -75,7 +75,7 @@ export default function MainHeroBanner() {
               You Give Back To What Matters Most.
             </Title>
 
-            <Text mt="md" size="lg">
+            <Text mt="md" size="lg" color="#fff">
               When you buy from local stores, you’re not just purchasing a
               product — you’re investing in your community. Every purchase helps
               support local jobs, families, and dreams. You get personalized
@@ -83,7 +83,7 @@ export default function MainHeroBanner() {
               making a difference.
             </Text>
 
-            <Text mt="md" >
+            <Text mt="md" color="#fff">
               Skip the online cart. Visit your neighborhood store today and be
               part of something bigger.
             </Text>

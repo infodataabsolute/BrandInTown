@@ -27,12 +27,12 @@ const DUMMY_DATA = Array(10).fill({
 export function CustomerList() {
   return (
     <Container size="xl" py="xl">
-      <Paper shadow="sm" radius="lg" withBorder p="xl" bg="#FDFDFD" style={{ borderColor: '#D1D1D1' }}>
+      <Paper shadow="sm" radius="lg" withBorder p="xl" bg="text-light" style={{ borderColor: '#D1D1D1' }}>
         
         {/* Table Header & Filters */}
         <Group justify="space-between" mb="xl" wrap="wrap">
           <Group gap="xs">
-            <IconUser color="#F2B052" />
+            <IconUser color="primary" />
             <Title order={4}>Customer List</Title>
           </Group>
 
@@ -55,7 +55,7 @@ export function CustomerList() {
               placeholder="Search" 
               leftSection={<IconSearch size={16} />} 
               radius="md"
-              styles={{ input: { borderColor: '#F2B052' } }}
+              styles={{ input: { borderColor: 'primary' } }}
             />
             <Button
               variant="outline" 
@@ -71,7 +71,7 @@ export function CustomerList() {
         {/* Responsive Table Area */}
         <ScrollArea>
           <Table verticalSpacing="md" minWidth={800}>
-            <Table.Thead bg="#F2B052">
+            <Table.Thead bg="primary">
               <Table.Tr>
                 
                 <Table.Th c="white">Customer Name</Table.Th>
@@ -103,7 +103,7 @@ export function CustomerList() {
 
         {/* Pagination */}
         <Group justify="center" mt="xl">
-          <Pagination total={3} color="#F2B052" radius="md" />
+          <Pagination total={3} color="primary" radius="md" />
         </Group>
       </Paper>
     </Container>

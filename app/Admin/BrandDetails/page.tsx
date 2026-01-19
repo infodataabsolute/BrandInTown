@@ -21,22 +21,22 @@ import { useRef, useState } from 'react';
 import { AdminNavbar } from '../../../components/admin/adminNavbar';
 
 const themeStyles = {
-  primary: '#F2b052',
-  darkBlue: '#1A1F4C',
+  primary: 'primary',
+  darkBlue: '#1b1b1bff',
   input: {
-    label: { marginBottom: rem(5), color: '#1A1F4C', fontWeight: 600 },
-    input: { borderColor: '#F2b052', borderRadius: rem(8) }
+    label: { marginBottom: rem(5), color: 'secondary', fontWeight: 600 },
+    input: { borderColor: 'primary', borderRadius: rem(8) }
   }
 };
 
 // Common Styles for consistent UI
 const inputStyles = {
-  label: { marginBottom: rem(5), color: '#1A1F4C', fontWeight: 600 },
+  label: { marginBottom: rem(5), color: 'secondary', fontWeight: 600 },
   input: { 
-    borderColor: '#F2b052', 
+    borderColor: 'primary', 
     borderRadius: rem(8),
     height: rem(42),
-    '&:focus': { borderColor: '#1A1F4C' }
+    '&:focus': { borderColor: 'secondary' }
   }
 };
 
@@ -63,7 +63,7 @@ export default function AdminFlow() {
       <Stepper 
         active={active} 
         onStepClick={setActive} 
-        color="orange" 
+        // color="white" 
         size="sm"
         allowNextStepsSelect={false}
         mb={50}
@@ -71,11 +71,12 @@ export default function AdminFlow() {
         <Stepper.Step label="Brand Details" />
         <Stepper.Step label="Store Details" />
         <Stepper.Step label="Offer Details" />
+        <Stepper.Step label="Subscription" />
       </Stepper>
 
       {/* --- Step 1: Brand Details --- */}
       {active === 0 && (
-        <Paper withBorder p="xl" radius="md" style={{ borderColor: '#F2b052' }}>
+        <Paper withBorder p="xl" radius="md" style={{ borderColor: 'primary' }}>
           <Grid gutter={40}>
             <Grid.Col span={{ base: 12, md: 4 }}>
               <Box 
@@ -110,8 +111,8 @@ export default function AdminFlow() {
                 </SimpleGrid>
 
                 <Group>
-                  <Checkbox label="Active" color="orange" defaultChecked />
-                  <Checkbox label="Verified" color="orange" />
+                  <Checkbox label="Active" color="primary" defaultChecked />
+                  <Checkbox label="Verified" color="primary" />
                 </Group>
 
                 <TextInput label="Email ID/ User ID *" placeholder="naveensharma@gmail.com" styles={themeStyles.input} />
@@ -130,7 +131,7 @@ export default function AdminFlow() {
               <Text size="sm" c="dimmed">List of stores associated with this brand</Text>
             </Box>
             <Group>
-              <Button variant="outline" color="orange" leftSection={<IconUpload size={16} />}>Upload</Button>
+              <Button variant="outline" color="primary" leftSection={<IconUpload size={16} />}>Upload</Button>
               <Button onClick={open} bg={themeStyles.primary} c="dark">Add Store +</Button>
               <Select placeholder="City" data={['Jaipur', 'Delhi']} w={100} />
             </Group>
@@ -150,7 +151,7 @@ export default function AdminFlow() {
               </Table.Thead>
               <Table.Tbody>
                 {[1, 2, 3, 4].map((i) => (
-                  <Table.Tr key={i} style={{ borderBottom: '1px solid #F2b05244' }}>
+                  <Table.Tr key={i} style={{ borderBottom: '1px solid primary44' }}>
                     <Table.Td>
                       <Text fw={600}>Aman Puma</Text>
                       <Text size="xs" c="dimmed">9:00 AM - 10:00 PM</Text>
@@ -161,8 +162,8 @@ export default function AdminFlow() {
                     <Table.Td>Malviya Nagar</Table.Td>
                     <Table.Td>
                       <Group gap={5}>
-                        <ActionIcon variant="transparent" c={themeStyles.darkBlue}><IconEdit size={16} /></ActionIcon>
-                        <ActionIcon variant="transparent" c={themeStyles.darkBlue}><IconTrash size={16} /></ActionIcon>
+                        <ActionIcon variant="transparent" c= "dark"><IconEdit size={16} /></ActionIcon>
+                        <ActionIcon variant="transparent" c="dark"><IconTrash size={16} /></ActionIcon>
                       </Group>
                     </Table.Td>
                   </Table.Tr>
@@ -183,10 +184,10 @@ export default function AdminFlow() {
 
           <Group justify="space-between" mb="md">
             <Group gap="sm">
-              <Button  onClick={open} variant="outline" color="orange" radius="md" leftSection={<IconUpload size={18} />}>Upload</Button>
-              <Button onClick={open} variant="outline" color="orange" radius="md" leftSection={<IconPlus size={18} />}>Add Offer</Button>
+              <Button  onClick={open} variant="outline" color="primary" radius="md" leftSection={<IconUpload size={18} />}>Upload</Button>
+              <Button onClick={open} variant="outline" color="primary" radius="md" leftSection={<IconPlus size={18} />}>Add Offer</Button>
             </Group>
-            <Select placeholder="City" data={['Jaipur', 'Delhi']} radius="md" w={110} styles={{ input: { borderColor: '#F2b052' } }} />
+            <Select placeholder="City" data={['Jaipur', 'Delhi']} radius="md" w={110} styles={{ input: { borderColor: 'primary' } }} />
           </Group>
 
           <ScrollArea>
@@ -203,7 +204,7 @@ export default function AdminFlow() {
               </Table.Thead>
               <Table.Tbody>
                 {OFFER_DATA.map((offer, index) => (
-                  <Table.Tr key={index} style={{ outline: '1px solid #F2b052', borderRadius: rem(8) }}>
+                  <Table.Tr key={index} style={{ outline: '1px solid primary', borderRadius: rem(8) }}>
                     <Table.Td fw={600}>{offer.title}</Table.Td>
                     <Table.Td>{offer.type}</Table.Td>
                     <Table.Td>{offer.from}</Table.Td>
@@ -213,8 +214,8 @@ export default function AdminFlow() {
                     </Table.Td>
                     <Table.Td>
                       <Group gap="xs">
-                        <ActionIcon variant="transparent" c="dark" ><IconEdit size={18} /></ActionIcon>
-                        <ActionIcon variant="transparent" c="dark"><IconTrash size={18} /></ActionIcon>
+                        <ActionIcon variant="transparent" color="dark" ><IconEdit size={18} /></ActionIcon>
+                        <ActionIcon variant="transparent" color="dark"><IconTrash size={18} /></ActionIcon>
                       </Group>
                     </Table.Td>
                   </Table.Tr>
@@ -227,19 +228,19 @@ export default function AdminFlow() {
 
       {/* --- Bottom Navigation Buttons --- */}
       <Group justify="flex-end" mt={40}>
-        <Button 
+        {/* <Button 
           variant="outline" 
-          color="orange" 
+          color="primary" 
           onClick={() => setActive((current) => current - 1)}
           disabled={active === 0}
           leftSection={<IconArrowLeft size={18} />}
           radius="md"
         >
           Back
-        </Button>
+        </Button> */}
         <Button 
           bg={active === 2 ? '#BDBDBD' : themeStyles.primary} 
-          c={active === 2 ? 'white' : 'dark'}
+          c={active === 2 ? 'primary' : 'dark'}
           onClick={() => active < 2 && setActive((current) => current + 1)}
           rightSection={<IconArrowRight size={18} />}
           radius="md"
@@ -261,7 +262,7 @@ export default function AdminFlow() {
         size="70%" // Large size as per your image
         radius="md"
         padding="xl"
-        styles={{ close: { color: '#F2b052', border: '1px solid #F2b052' } }}
+        styles={{ close: { color: 'primary', border: '1px solid primary' } }}
       >
         <Stack gap="md">
           {/* Row 1: Store Name & Brand */}
@@ -276,10 +277,10 @@ export default function AdminFlow() {
               <Textarea label="About Store *" placeholder="Description" minRows={4} styles={inputStyles} />
             </Grid.Col>
             <Grid.Col span={{ base: 12, sm: 6 }}>
-              <Text size="sm" fw={600} c="#1A1F4C" mb={5}>Upload Image *</Text>
+              <Text size="sm" fw={600} c="secondary" mb={5}>Upload Image *</Text>
               <Box 
                 style={{ 
-                  border: `1.5px solid #1A1F4C`, 
+                  border: `1.5px solid secondary`, 
                   borderRadius: rem(8), 
                   height: rem(105),
                   display: 'flex',
@@ -287,7 +288,7 @@ export default function AdminFlow() {
                   justifyContent: 'center'
                 }}
               >
-                <ActionIcon variant="filled" bg="#F2b052" size="xl" radius="xl">
+                <ActionIcon variant="filled" bg="primary" size="xl" radius="xl">
                   <IconCamera size={26} color="black" />
                 </ActionIcon>
               </Box>
@@ -326,23 +327,23 @@ export default function AdminFlow() {
             <TextInput label="Email Id *" placeholder="email@gmail.com" styles={inputStyles} />
             <Box>
               <TextInput label="WhatsApp No *" placeholder="91-0000000000" styles={inputStyles} />
-              <Checkbox label="Same as phone number" size="xs" mt={5} styles={{ label: { color: '#F2b052' } }} />
+              <Checkbox label="Same as phone number" size="xs" mt={5} styles={{ label: { color: 'primary' } }} />
             </Box>
           </SimpleGrid>
 
           {/* Row 9: Status Toggles */}
           <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
             <Box>
-              <Text size="sm" fw={600} c="#1A1F4C" mb={5}>Exclusive Store *</Text>
+              <Text size="sm" fw={600} c="secondary" mb={5}>Exclusive Store *</Text>
               <Group>
-                <Checkbox label="Yes" color="orange" defaultChecked iconColor="dark" />
+                <Checkbox label="Yes" color="primary" defaultChecked iconColor="dark" />
                 <Checkbox label="No" color="gray" />
               </Group>
             </Box>
             <Box>
-              <Text size="sm" fw={600} c="#1A1F4C" mb={5}>Is Active *</Text>
+              <Text size="sm" fw={600} c="secondary" mb={5}>Is Active *</Text>
               <Group>
-                <Checkbox label="Yes" color="orange" defaultChecked iconColor="dark" />
+                <Checkbox label="Yes" color="primary" defaultChecked iconColor="dark" />
                 <Checkbox label="No" color="gray" />
               </Group>
             </Box>
@@ -363,7 +364,7 @@ export default function AdminFlow() {
           {/* Footer Action */}
           <Group justify="flex-end" mt="xl">
             <Button 
-              bg="#F2b052" 
+              bg="primary" 
               c="dark" 
               radius="md" 
               size="lg" 
@@ -401,7 +402,7 @@ export default function AdminFlow() {
 //           {/* Upload Button */}
 //           <Button
 //             variant="outline"
-//             color="orange"
+//             color="primary"
 //             leftSection={<IconUpload size={18} />}
 //             onClick={() => inputRef.current?.click()}
 //           >
@@ -430,7 +431,7 @@ export default function AdminFlow() {
 //               Cancel
 //             </Button>
 //             <Button
-//               color="orange"
+//               color="primary"
 //               disabled={!file}
 //               onClick={() => {
 //                 console.log(file);

@@ -7,6 +7,7 @@ import "./globals.css";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Poppins } from "next/font/google";
+import Footer from "../components/Footer";
 
 /* ===========================
    Load Google Font

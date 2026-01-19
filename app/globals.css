@@ -5,10 +5,10 @@
 ================================ */
 
 :root {
-  --primary: #F2B052;   /* Yellow brand */
-  --secondary: #000000; /* 👈 BLACK */
+  --primary: #f2b052;   /* Yellow brand */
+  --secondary: #0f0f0f; /* 👈 BLACK */
   --text-dark: #000000; /* 👈 BLACK text everywhere */
-  --text-light: #0000;
+  --text-light: #FDFDFD;
   --radius: 10px;
   --font-primary: "AGWIT", "Poppins", system-ui, sans-serif;
 }

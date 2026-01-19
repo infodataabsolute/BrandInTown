@@ -27,12 +27,12 @@ const DUMMY_DATA = Array(10).fill({
 export function BrandList() {
   return (
     <Container size="xl" py="xl">
-      <Paper shadow="sm" radius="lg" withBorder p="xl" bg="#FDFDFD" style={{ borderColor: '#D1D1D1' }}>
+      <Paper shadow="sm" radius="lg" withBorder p="xl" bg="text-light" style={{ borderColor: '#D1D1D1' }}>
         
         {/* Table Header & Filters */}
         <Group justify="space-between" mb="xl" wrap="wrap">
           <Group gap="xs">
-            <IconBuildingStore color="#F2B052" />
+            <IconBuildingStore color="primary" />
             <Title order={4}>Brand List</Title>
           </Group>
 
@@ -55,7 +55,7 @@ export function BrandList() {
               placeholder="Search" 
               leftSection={<IconSearch size={16} />} 
               radius="md"
-              styles={{ input: { borderColor: '#F2B052' } }}
+              styles={{ input: { borderColor: 'primary' } }}
             />
             <Button
               variant="outline" 
@@ -71,7 +71,7 @@ export function BrandList() {
         {/* Responsive Table Area */}
         <ScrollArea>
           <Table verticalSpacing="md" minWidth={800}>
-            <Table.Thead bg="#F2B052">
+            <Table.Thead bg="primary">
               <Table.Tr>
                 <Table.Th c="white">Store Name</Table.Th>
                 <Table.Th c="white">Customer Name</Table.Th>
@@ -89,8 +89,8 @@ export function BrandList() {
                   <Table.Td>{item.name}</Table.Td>
                   <Table.Td>{item.contact}</Table.Td>
                   <Table.Td>{item.email}</Table.Td>
-                  <Table.Td><Checkbox checked color="#F2B052" readOnly /></Table.Td>
-                  <Table.Td><Checkbox checked color="#F2B052" readOnly /></Table.Td>
+                  <Table.Td><Checkbox checked color="primary" readOnly /></Table.Td>
+                  <Table.Td><Checkbox checked color="primary" readOnly /></Table.Td>
                   <Table.Td>
                     <Group gap="xs">
                       <ActionIcon variant="transparent" color="blue"><IconEdit size={18} /></ActionIcon>
@@ -105,7 +105,7 @@ export function BrandList() {
 
         {/* Pagination */}
         <Group justify="center" mt="xl">
-          <Pagination total={3} color="#F2B052" radius="md" />
+          <Pagination total={3} color="primary" radius="md" />
         </Group>
       </Paper>
     </Container>
