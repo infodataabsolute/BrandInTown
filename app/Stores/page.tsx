@@ -21,7 +21,7 @@ import {
   Select,
   Checkbox,
   UnstyledButton,
-  Modal,                                                                                                                          
+  Modal,
   em,
   Tabs,
   Avatar,
@@ -55,7 +55,7 @@ import {
   IconCreditCard,
   IconTicket,
   IconShoppingCart
-  
+
 } from '@tabler/icons-react';
 import { IconBuildingStore } from "@tabler/icons-react";
 import { IconBell } from "@tabler/icons-react";
@@ -99,14 +99,14 @@ export default function BrandDiscoveryPage() {
   return (
     <>
       <Navbar />
-      <HeroBanner/>
+      <HeroBanner />
       <Container size="xl" py="xl" bg="#ffff">
         <Grid gutter="xl">
           {/* LEFT SIDEBAR: Filters */}
           <Grid.Col span={{ base: 12, md: 3 }}>
             <Paper withBorder p="xl" radius="md" >
               <Stack gap="xl" >
-                <FilterSection title="Product Categories" items={['Men ', 'Women', 'Kids', 'Beauty', 'Home Decor', 'Home Appliances', 'Gadgets', 'Jewellery' ,'Sports']} active="Women" />
+                <FilterSection title="Product Categories" items={['Men ', 'Women', 'Kids', 'Beauty', 'Home Decor', 'Home Appliances', 'Gadgets', 'Jewellery', 'Sports']} active="Women" />
                 <FilterSection title="Brands" items={['Zara', 'H&M', 'Puma', 'Forever 21']} active="Zara" />
                 <FilterSection title="Area/Location" items={['Vaishali Nagar', 'Jagatpura', 'Civil Lines', 'C-Scheme', 'Malviya Nagar', 'Mansarover', 'Ajmer Road']} active="Vaishali Nagar" />
                 <FilterSection title="Shopping Malls" items={['WTP Mall', 'JTM Mall', 'Gaurav Tower', 'Pink Square', 'Jaipur Mall', 'High Street']} active="WTP Mall" />
@@ -127,7 +127,7 @@ export default function BrandDiscoveryPage() {
                     size="lg"
                     radius="sm"
                     rightSection="×"
-                    styles={{ root: {  textTransform: 'none' } }}
+                    styles={{ root: { textTransform: 'none' } }}
                   >
                     {tag}
                   </Badge>
@@ -150,7 +150,7 @@ export default function BrandDiscoveryPage() {
                           <Group gap={10}>
                             <IconStarFilled size={18} color='#f2b052' />
                             <Text fw={700} size="lg">3.9</Text>
-                          
+
                             <Stack gap={2} align="center">
                               <IconThumbUp size={18} color="gray" />
                               <Text size="10px" >40K</Text>
@@ -185,7 +185,7 @@ export default function BrandDiscoveryPage() {
                            View Cradit Card Offers
                         </Button> */}
 
-                          
+
                         </Group>
 
                         {/* <Divider my="xs" />
@@ -248,7 +248,7 @@ export default function BrandDiscoveryPage() {
                   radius="md"
                   pt={15}
                   h={330}
-                 
+
                   alt="Main Store"
 
                 />
@@ -259,21 +259,21 @@ export default function BrandDiscoveryPage() {
                 <Group justify="space-between" align="flex-start" wrap="nowrap">
                   <Stack>
                     <Group>
-                    <Text fw={700} size="lg" style={{ fontSize: '1.8rem', }}>
-                      Lifestyle- A Brand for Clot...
-                    </Text>
-                    <Group ml={30}>
-                     <IconStarFilled size={16} color="primary" />
-                      <Text fw={600}>3.9</Text>
-                      <Stack align="center" gap={0}>
-                        <IconThumbUp size={20} />
-                        <Text size="xs">48K</Text>
-                      </Stack>
-                      <Stack align="center" gap={0} >
-                        <IconShare size={20} />
-                        <Text size="xs">48K</Text>
-                      </Stack>
-                    </Group>
+                      <Text fw={700} size="lg" style={{ fontSize: '1.8rem', }}>
+                        Lifestyle- A Brand for Clot...
+                      </Text>
+                      <Group ml={30}>
+                        <IconStarFilled size={16} color="primary" />
+                        <Text fw={600}>3.9</Text>
+                        <Stack align="center" gap={0}>
+                          <IconThumbUp size={20} />
+                          <Text size="xs">48K</Text>
+                        </Stack>
+                        <Stack align="center" gap={0} >
+                          <IconShare size={20} />
+                          <Text size="xs">48K</Text>
+                        </Stack>
+                      </Group>
                     </Group>
                     {/* <Group gap={5} >
                       <IconStarFilled size={16} color="primary" />
@@ -281,7 +281,7 @@ export default function BrandDiscoveryPage() {
                        
                     </Group> */}
                   </Stack>
-                  
+
                 </Group>
 
                 <Text size="sm" mt="md" lineClamp={3}>
@@ -295,17 +295,17 @@ export default function BrandDiscoveryPage() {
                     <IconMapPin size={22} />
                     <Text size="sm">MGF Metropolitan Bhawani Singh Marg, Sahakar Bhawan Circle, Jaipur 302006</Text>
                   </Group>
-                 <Group >
-                 
-                  <Button
-  variant="light"
-  size="md"
-  radius="sm"
-  w="fit-content"
-  leftSection={<IconBell size={18} />}
->
-  Subscribe
-</Button>
+                  <Group >
+
+                    <Button
+                      variant="light"
+                      size="md"
+                      radius="sm"
+                      w="fit-content"
+                      leftSection={<IconBell size={18} />}
+                    >
+                      Subscribe
+                    </Button>
                   </Group>
 
                   {/* <Group justify="space-between" mt="sm">
@@ -412,84 +412,84 @@ export default function BrandDiscoveryPage() {
               <Stack gap="md" style={{ border: '1px solid #eee', padding: '15px', borderRadius: '8px' }}>
                 <Group justify="space-between" align="center" mb="md">
 
-                   <Text fw={700} size="lg" style={{ fontSize: '1.8rem', }}>
-                      All Offers
-                    </Text>
+                  <Text fw={700} size="lg" style={{ fontSize: '1.8rem', }}>
+                    All Offers
+                  </Text>
                   <Group gap="xs">
                     <Button
-  leftSection={<IconBuildingStore size={16} />}
-  size="md"
-  variant="filled"
-  style={{ background: "primary", color: "#1f1e1e" }}
->
-  Store
-</Button>
-                   <Button
-  variant="outline"
-  size="md"
-  leftSection={<IconCreditCard size={16} />}
-  styles={{
-    root: {
-      borderColor: "primary",
-      backgroundColor: "white",
-      color: "black",
-      paddingLeft: rem(15),
-      paddingRight: rem(15),
-      borderWidth: rem(1.5),
-      "&:hover": {
-        backgroundColor: "#fff9f0",
-      },
-    },
-    inner: {
-      justifyContent: "space-between",
-    },
-    label: {
-      marginRight: rem(10),
-      marginLeft: rem(5),
-    },
-  }}
->
-  Credit Card
-</Button>
+                      leftSection={<IconBuildingStore size={16} />}
+                      size="md"
+                      variant="filled"
+                      style={{ background: "primary", color: "#1f1e1e" }}
+                    >
+                      Store
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="md"
+                      leftSection={<IconCreditCard size={16} />}
+                      styles={{
+                        root: {
+                          borderColor: "primary",
+                          backgroundColor: "white",
+                          color: "black",
+                          paddingLeft: rem(15),
+                          paddingRight: rem(15),
+                          borderWidth: rem(1.5),
+                          "&:hover": {
+                            backgroundColor: "#fff9f0",
+                          },
+                        },
+                        inner: {
+                          justifyContent: "space-between",
+                        },
+                        label: {
+                          marginRight: rem(10),
+                          marginLeft: rem(5),
+                        },
+                      }}
+                    >
+                      Credit Card
+                    </Button>
 
                     <Button
-  variant="outline"
-  size="md"
-  leftSection={<IconTicket size={16} />}
-  styles={{
-    root: {
-      borderColor: "primary",
-      backgroundColor: "white",
-      color: "black",
-      paddingLeft: rem(15),
-      paddingRight: rem(15),
-      borderWidth: rem(1.5),
-      "&:hover": {
-        backgroundColor: "#fff9f0",
-      },
-    },
-    inner: {
-      justifyContent: "space-between",
-    },
-    label: {
-      marginRight: rem(10),
-      marginLeft: rem(5),
-    },
-  }}
->
-  Coupon
-</Button>
+                      variant="outline"
+                      size="md"
+                      leftSection={<IconTicket size={16} />}
+                      styles={{
+                        root: {
+                          borderColor: "primary",
+                          backgroundColor: "white",
+                          color: "black",
+                          paddingLeft: rem(15),
+                          paddingRight: rem(15),
+                          borderWidth: rem(1.5),
+                          "&:hover": {
+                            backgroundColor: "#fff9f0",
+                          },
+                        },
+                        inner: {
+                          justifyContent: "space-between",
+                        },
+                        label: {
+                          marginRight: rem(10),
+                          marginLeft: rem(5),
+                        },
+                      }}
+                    >
+                      Coupon
+                    </Button>
 
 
-                     <Button
-  variant="light"
-  size="md"
-  radius="sm"
-  leftSection={<IconShoppingCart size={16} />}
-  w="fit-content"
->
-  Book Your Product
-</Button>
+                    <Button
+                      variant="light"
+                      size="md"
+                      radius="sm"
+                      leftSection={<IconShoppingCart size={16} />}
+                      w="fit-content"
+                    >
+                      Book Your Product
+                    </Button>
 
                   </Group>
                 </Group>
@@ -566,143 +566,141 @@ export default function BrandDiscoveryPage() {
           </Box>
         </Modal>
 
-        <Modal opened={reviewOpened} onClose={closeReview} size="80%" centered>
+        <Modal
+          opened={reviewOpened}
+          onClose={closeReview}
+          variant='outline'
+          size="80%"
+          centered
+          radius="md"
+          padding="lg"
 
-          <Stack gap="md">
-            {/* <Title order={4} c="brandBlue.9" >Review Us</Title> */}
-            <Button
-              variant="filled"
-              color="primary"
-              radius="md"
-              rightSection={<IconChevronDown size={18} />}
-              h={40}
-              w={150}
-              onClick={openReview}
-            >
-              Reviews
-            </Button>
+        >
+          {/* MODAL HEADER */}
+          <Group justify="space-between" mb="md">
+            <Text fw={700} size="xl">
+              Write a Review
+            </Text>
+          </Group>
 
-            <SimpleGrid cols={{ base: 1, md: 2 }} spacing="lg">
-              {/* Left Side: Input Form */}
-              <Paper withBorder p="md" radius="md" style={{ borderColor: 'var(--mantine-color-brandBlue-2)' }}>
-                <Group mb="sm">
-                  <Avatar size="sm" src="https://api.dicebear.com/7.x/avataaars/svg?seed=user1" />
-                  <Text size="xs" c="dimmed">Write Text Here.</Text>
-                </Group>
-
-                {/* <Textarea placeholder="Share your experience..." minRows={4} variant="unstyled" /> */}
-
-                <Textarea
-                  placeholder="Share your experience..."
-                  minRows={4}
-                  variant="unstyled"
-                  value={reviewText}
-                  onChange={(e) => setReviewText(e.currentTarget.value)}
+          <SimpleGrid cols={{ base: 1, md: 2 }} spacing="lg">
+            {/* LEFT: REVIEW FORM */}
+            <Paper withBorder radius="md" p="lg">
+              {/* User */}
+              <Group mb="sm">
+                <Avatar
+                  size="sm"
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=user1"
                 />
-
-
-                {/* <Box mt="xl">
-              <Text fw={700} c="brandBlue.9" mb="xs">Rate Us</Text>
-              <Group gap="xs">
-                {['Excellent', 'Good', 'Average', 'Poor', 'Bad'].map((label) => (
-                  <Stack key={label} align="center" gap={4}>
-                    <Text size="xs" c="brandBlue.9">{label}</Text>
-                  </Stack>
-                ))}
+                <Text size="sm" fw={500} c="dimmed">
+                  Share your experience
+                </Text>
               </Group>
-            </Box>
 
-            <Group justify="flex-end" mt="xl">
-              <Button color="primary" rightSection={<IconCheck size={16} />}>
-                Submit Review
-              </Button>
-            </Group> */}
+              {/* TEXTAREA */}
+              <Textarea
+                placeholder="Tell others what you liked or disliked..."
+                minRows={4}
+                radius="md"
+                value={reviewText}
+                onChange={(e) => setReviewText(e.currentTarget.value)}
+              />
 
+              {/* RATING */}
+              <Box mt="lg">
+                <Text fw={600} mb="xs">
+                  Rate this store
+                </Text>
 
-                <Box mt="xl">
-                  <Text fw={700} color='secondary' mb="xs">
-                    Rate Us
-                  </Text>
+                <Group gap="sm">
+                  {ratings.map((label) => {
+                    const isActive = rating === label;
 
-                  <Group gap="sm">
-                    {ratings.map((label) => {
-                      const isActive = rating === label;
-
-                      return (
-                        <Stack
-                          key={label}
-                          align="center"
-                          gap={4}
-                          onClick={() => setRating(label)}
-                          style={{
-                            cursor: "pointer",
-                            padding: "8px 14px",
-                            borderRadius: 8,
-                            backgroundColor: isActive ? "#f2b052" : "#f5f5f5",
-                            border: isActive ? "2px solid #f2b052" : "1px solid #ddd",
-                          }}
-                        >
-                          <Text
-                            size="xs"
-                            fw={600}
-                            c={isActive ? "#000" : "#555"}
-                          >
-                            {label}
-                          </Text>
-                        </Stack>
-                      );
-                    })}
-                  </Group>
-                </Box>
-
-                <Group justify="flex-end" mt="xl">
-                  <Button
-                    color="primary"
-                    rightSection={<IconCheck size={16} />}
-                    disabled={!rating || !reviewText}
-                    onClick={() => {
-                      setReviews((prev) => [...prev,{ text: reviewText, rating }, ]);
-
-                      setReviewText("");
-                      setRating(null);
-                    }}
-                  >
-                    Submit Review
-                  </Button>
-
+                    return (
+                      <Box
+                        key={label}
+                        onClick={() => setRating(label)}
+                        style={{
+                          cursor: "pointer",
+                          padding: "8px 16px",
+                          borderRadius: 20,
+                          fontSize: 12,
+                          fontWeight: 600,
+                          backgroundColor: isActive ? "#f2b052" : "#f5f5f5",
+                          border: isActive ? "2px solid #f2b052" : "1px solid #ddd",
+                          color: isActive ? "#000" : "#555",
+                        }}
+                      >
+                        {label}
+                      </Box>
+                    );
+                  })}
                 </Group>
+              </Box>
 
-              </Paper>
+              {/* SUBMIT */}
+              <Group justify="flex-end" mt="xl">
+                <Button
+                  color="primary"
+                  rightSection={<IconCheck size={16} />}
+                  disabled={!rating || !reviewText}
+                  onClick={() => {
+                    setReviews((prev) => [
+                      ...prev,
+                      { text: reviewText, rating },
+                    ]);
+                    setReviewText("");
+                    setRating(null);
+                  }}
+                >
+                  Submit Review
+                </Button>
+              </Group>
+            </Paper>
 
-              {reviews.map((review, i) => (
-                <Paper key={i} withBorder p="md" radius="md">
-                  <Group mb="xs">
-                    <Avatar size="sm" />
-                    <Box>
-                      <Text size="xs" fw={700}>User</Text>
-                      <Text size="xs" c="primary">
-                        {review.rating}
-                      </Text>
-                    </Box>
-                  </Group>
+            {/* RIGHT: REVIEWS LIST */}
+            <Paper withBorder radius="md" p="lg">
+              <Text fw={600} mb="sm">
+                Recent Reviews
+              </Text>
 
-                  <Text size="xs" c="dimmed" lineClamp={3}>
-                    {review.text}
+              <Stack gap="md" style={{ maxHeight: 280, overflowY: "auto" }}>
+                {reviews.length === 0 && (
+                  <Text size="sm" c="dimmed">
+                    No reviews yet. Be the first to review!
                   </Text>
-                </Paper>
-              ))}
+                )}
 
-            </SimpleGrid>
+                {reviews.map((review, i) => (
+                  <Paper key={i} withBorder radius="md" p="sm">
+                    <Group mb={4}>
+                      <Avatar size="sm" />
+                      <Box>
+                        <Text size="xs" fw={700}>
+                          User
+                        </Text>
+                        <Text size="xs" c="primary">
+                          {review.rating}
+                        </Text>
+                      </Box>
+                    </Group>
 
-            <Group justify="center" mt="md">
-              <Button onClick={closeReview}>
-                Close ↑
-              </Button>
+                    <Text size="xs" c="dimmed" lineClamp={3}>
+                      {review.text}
+                    </Text>
+                  </Paper>
+                ))}
+              </Stack>
+            </Paper>
+          </SimpleGrid>
 
-            </Group>
-          </Stack>
+          {/* FOOTER */}
+          <Group justify="center" mt="lg">
+            <Button variant="light" onClick={closeReview}>
+              Close ↑
+            </Button>
+          </Group>
         </Modal>
-
       </Container>
       <Footer />
     </>
@@ -734,7 +732,6 @@ function FilterSection({ title, items, active }: { title: string, items: string[
             {item}
           </Button>
         ))}
-    
       </Group>
     </Box>
   );

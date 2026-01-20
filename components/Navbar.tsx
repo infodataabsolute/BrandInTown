@@ -380,7 +380,7 @@ export default function Navbar() {
               /* PHONE INPUT VIEW */
               <Stack gap="md">
 
-                <Group ml={45}>
+                <Group >
                   <TextInput
                     defaultValue="+91"
                     variant="default"
@@ -397,7 +397,7 @@ export default function Navbar() {
                   fullWidth
                   size="md"
                   style={{ width: "200px" }}
-                  ml={50}
+                  
                   mt="md"
                   bg={brandColor}
                   c={darkPurple}

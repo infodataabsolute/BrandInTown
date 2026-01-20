@@ -109,17 +109,17 @@ export default function Footer() {
           {/* 3. Categories Section */}
           <Stack gap="xs" align={stackAlign}>
             <Text fw={700}>Categories</Text>
-            <Anchor component={Link} href="/shop/fashion" c="#1A1A1A" size="sm">'Fashion,Accessories & Beauty</Anchor>
-            <Anchor component={Link} href="/shop/home-decor" c="#1A1A1A" size="sm">Home Decor</Anchor>
-            <Anchor component={Link} href="/shop/appliances" c="#1A1A1A" size="sm">Home Appliance</Anchor>
-            <Anchor component={Link} href="/shop/jewellery" c="#1A1A1A" size="sm">Jewellery</Anchor>
-            <Anchor component={Link} href="/shop/sports" c="#1A1A1A" size="sm">Sports</Anchor>
-            <Anchor component={Link} href="/shop/sports" c="#1A1A1A" size="sm">Personal Gadgets</Anchor>
+    <Anchor c="#1A1A1A" href="/#fashion">Fashion, Accessories & Beauty</Anchor>
+<Anchor  c="#1A1A1A" href="/#home-decor">Home Decor</Anchor>
+<Anchor  c="#1A1A1A" href="/#appliances">Home Appliance</Anchor>
+<Anchor  c="#1A1A1A" href="/#jewellery">Jewellery</Anchor>
+<Anchor  c="#1A1A1A" href="/#sports">Sports</Anchor>
+{/* <Anchor  c="#1A1A1A" href="/#gadgets">Personal Gadgets</Anchor> */}
           </Stack>
 
           {/* 4. Support Section */}
           <Stack gap="xs" align={stackAlign}>
-            <Text fw={700}>Grow With US</Text>
+            <Text fw={700}>Grow With Us</Text>
             <Anchor component={Link} href="/Login" c="#1A1A1A" size="sm">Become A Partner</Anchor>
             <Anchor component={Link} href="/help-center" c="#1A1A1A" size="sm">Download Our App</Anchor>
             <Anchor component={Link} href="/help-center" c="#1A1A1A" size="sm">Advertise With Us</Anchor>

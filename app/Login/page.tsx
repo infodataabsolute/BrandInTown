@@ -21,6 +21,7 @@ import {
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { IconCheck, IconPlayerPlayFilled } from "@tabler/icons-react";
+import Link from "next/link";
 
 export default function LoginPage() {
   const brandColor = "#f2b052";
@@ -143,8 +144,25 @@ export default function LoginPage() {
 
                 <Text size="xs" c="dimmed" ta="center" mt="sm">
                   By proceeding, you agree to Brand InTown{" "}
-                  <Anchor size="xs">Terms of Service</Anchor> and{" "}
-                  <Anchor size="xs">Privacy Policy</Anchor>.
+                <Anchor
+    component={Link}
+    href="/Terms-conditions"
+  
+    size="xs"
+    fw={600}
+  >
+    Terms of Service
+  </Anchor>{" "}
+  and{" "}
+  <Anchor
+    component={Link}
+    href="/privacy-policy"
+  
+    size="xs"
+    fw={600}
+  >
+    Privacy Policy
+  </Anchor>
                 </Text>
               </Stack>
             </Container>

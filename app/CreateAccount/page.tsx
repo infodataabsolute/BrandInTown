@@ -105,9 +105,11 @@ export default function AuthModal() {
         opened={otpOpened}
         onClose={() => setOtpOpened(false)}
         centered
-        size="70%"
+        size="60%"
+      
+         
       >
-        <Group grow gap={0} wrap="nowrap" align="stretch">
+        <Group grow gap={0} wrap="wrap" align="stretch">
           {/* LEFT IMAGE */}
           <Box
             visibleFrom="sm"
@@ -120,10 +122,11 @@ export default function AuthModal() {
               padding: 40,
               color: "#fff",
               display: "flex",
-              paddingLeft: "70px"
-              // alignItems: "center",
+              paddingLeft: "70px",
+              alignItems: "center",
             }}
           >
+            
             <Stack>
               <Title order={1} fw={800}>
                 BrandInTown
@@ -136,6 +139,9 @@ export default function AuthModal() {
 
           {/* RIGHT OTP */}
           <Stack gap="md" align="center" justify="center" p="xl">
+             <Center>
+                <Image src="/images/Logo.jpeg" h={40} w="auto" />
+              </Center>
             <Text fw={600} size="sm">
               A 4 digit code has been sent to you
             </Text>

@@ -1,136 +1,239 @@
+// 'use client';
+
+// import { useRef } from 'react';
+// import { Carousel } from '@mantine/carousel';
+// import { Image, Container, Box } from '@mantine/core';
+// import Autoplay from 'embla-carousel-autoplay';
+// import '@mantine/carousel/styles.css';
+
+// const logos = [
+//   { src: '/images/a.png', alt: 'Chanel' },
+//   { src: '/images/b.png', alt: 'Adidas' },
+//   { src: '/images/c.png', alt: 'Vogue' },
+//   { src: '/images/d.png', alt: 'Dior' },
+//   { src: '/images/e.png', alt: 'H&M' },
+//   { src: '/images/f.png', alt: 'Hollister' },
+//   { src: '/images/g.png', alt: 'Nike' },
+//   { src: '/images/a.png', alt: 'Gucci' },
+//   { src: '/images/d.png', alt: 'Dior' },
+//   { src: '/images/e.png', alt: 'H&M' },
+//   { src: '/images/f.png', alt: 'Hollister' },
+//   { src: '/images/g.png', alt: 'Nike' },
+//   { src: '/images/a.png', alt: 'Gucci' },
+// ];
+
+// export default function LogoCarousel() {
+//   const autoplay = useRef(
+//     Autoplay({ delay: 800, stopOnInteraction: false })
+//   );
+
+//   return (
+//     <>
+  
+//     <Container size="lg" py="xl">
+//       <Carousel
+//         withControls={false}
+//         withIndicators={false}
+//         height={100}
+//         align="center"
+//         slideGap="xl"
+//         slideSize={{ base: '40%', sm: '25%', md: '16%', lg: '12%' }}
+//         loop
+//         dragFree
+//         plugins={[autoplay.current]}
+//         onMouseEnter={() => autoplay.current.stop()}
+//         onMouseLeave={() => autoplay.current.reset()}
+//       >
+//         {logos.map((logo, index) => (
+//           <Carousel.Slide key={index}>
+//             <Box
+//               style={{
+//                 height: '100%',
+//                 display: 'flex',
+//                 alignItems: 'center',
+//                 justifyContent: 'center',
+//               }}
+//             >
+//               <Image
+//                 src={logo.src}
+//                 alt={logo.alt}
+//                 height={40}
+//                 fit="contain"
+//                 style={{
+//                   filter: 'grayscale(100%)',
+//                   opacity: 0.9,
+//                 }}
+//               />
+//             </Box>
+//           </Carousel.Slide>
+//         ))}
+//       </Carousel>
+//     </Container>
+
+
+    
+//     </>
+//   );
+// }
+
+
+
+
+​
+
 "use client";
 
 import {
-  Container,
-  Grid,
-  Title,
+  Card,
   Text,
-  Button,
+  Title,
   Group,
   Image,
-  Paper,
+  Badge,
+  Container,
   Box,
 } from "@mantine/core";
-import { Zalando_Sans } from "next/font/google";
+import { useEffect, useRef } from "react";
 
-export default function MainHeroBanner() {
+export default function StoreActivityFeed() {
+  const activities = [
+    {
+      store: "Reliance Trends",
+      activity: "12 customers shopping now",
+      image: "/images/a.png",
+    },
+    {
+      store: "DMart",
+      activity: "Flash offer on groceries",
+      image: "/images/b.png",
+    },
+    {
+      store: "Zudio",
+      activity: "New arrivals launched",
+      image: "/images/c.png",
+    },
+    {
+      store: "Food Court",
+      activity: "High footfall detected",
+      image: "/images/d.png",
+    },
+    {
+      store: "Pantaloons",
+      activity: "3 orders placed recently",
+      image: "/images/e.png",
+    },
+    {
+      store: "INOX Mall",
+      activity: "Movie tickets selling fast",
+      image: "/images/f.png",
+    },
+    {
+      store: "Croma",
+      activity: "Electronics demo running",
+      image: "/images/d.png",
+    },
+    {
+      store: "Nike Store",
+      activity: "Limited stock alert",
+      image: "/images/g.png",
+    },
+  ];
+
+  // duplicate list for infinite scroll
+  const list = [...activities, ...activities];
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    let scroll = 0;
+
+    const interval = setInterval(() => {
+      scroll += 1;
+      el.scrollLeft = scroll;
+
+      if (scroll >= el.scrollWidth / 2) {
+        scroll = 0;
+        el.scrollLeft = 0;
+      }
+    }, 20); // speed
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-   <Box
-  component="footer"
-         
-  
-  mx= {"3%"}
-  bd= "md"
-  pos="relative"
-  bottom={"2px"}
-  bdrs={"30"}
+    <Container size="xl" py="xl">
+      {/* <Title order={3} mb="sm">
+        🔥 Live Activity Near You
+      </Title>
 
-  style={{
-    backgroundColor: "#f2b052",
-    overflow: "hidden",
-    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.25)", // 👈 bottom shadow
-    
-    
-  }}
-
->
-  {/* Background Image Layer */}
-  <Box
-    pos="absolute"
-    top={0}
-    left={0}
-    right={0}
-    bottom={0}
-
-    
-    style={{
-      backgroundImage: "url('/images/Capa.png')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      opacity: 0.85,   // image ki strength control yahan se
-      zIndex: 0,
-    }}
-  />
-
-
-    
+      <Text size="sm" c="dimmed" mb="md">
+        8 activities happening in nearby stores & mall
+      </Text> */}
 
 
 
-    
 
-      <Container size="auto" >
-        <Grid >
-          {/* LEFT CONTENT */}
-          <Grid.Col span={{ base: 12, md: 6 }}>
-            <Title
-              order={1}
-              fw={600}
-            
-              mt={65}
-              lh={1.2}
+    {/* <Box ta="center" mb={30}>
+              <Title order={2} fw={800}>
+                 Shop By Brands
+              </Title>
+              <Text c="dimmed" size="sm" fw={500}>
+             FInd your favorite brands and explore trending names, All in one place.
+              </Text>
+            </Box> */}
+
+
+
+      {/* SCROLL CONTAINER */}
+      <div
+        ref={scrollRef}
+        style={{
+          overflow: "hidden",
+          whiteSpace: "nowrap",
+        }}
+      >
+        <Group gap="sm" wrap="nowrap">
+          {list.map((item, index) => (
+            <Card
+              key={index}
+              // shadow="sm"
+              // radius="50%"
+              // withBorder
+              style={{
+                // minWidth: "23%", // 4 items visible
+                flexShrink: 0,
+              }}
             >
-              When You Buy Local, <br />
-              You Give Back To What Matters Most.
-            </Title>
+              <Group wrap="nowrap">
+                <Image
+                  src={item.image}
+                  height={60}
+                  width={50}
+                  radius="md"
+                  alt={item.store}
+                />
 
-            <Text mt="md" size="lg" color="#fff">
-              When you buy from local stores, you’re not just purchasing a
-              product — you’re investing in your community. Every purchase helps
-              support local jobs, families, and dreams. You get personalized
-              service, unique products, and the satisfaction of knowing you’re
-              making a difference.
-            </Text>
+                {/* <div>
+                  <Group gap={6}>
+                    <Text fw={600} size="sm">
+                      {item.store}
+                    </Text>
+                    <Badge size="xs" color="green" variant="light">
+                      LIVE
+                    </Badge>
+                  </Group>
 
-            <Text mt="md" color="#fff">
-              Skip the online cart. Visit your neighborhood store today and be
-              part of something bigger.
-            </Text>
-          </Grid.Col>
-
-          {/* RIGHT IMAGE */}
-          <Grid.Col span={{ base: 12, md: 6 }}>
-            <Box ta="center">
-              <Image
-                src="/images/Cart.png"
-                alt="Shopping Cart"
-                w="100%"
-                maw={450}
-                // mx="auto"
-              />
-            </Box>
-          </Grid.Col>
-        </Grid>
-
-        {/* LOGO STRIP */}
-        <Paper
-          mt={90}
-          radius="md"
-          py="md"
-          bg="white"
-          shadow="sm"
-           
-        >
-          <Group justify="space-between" wrap="nowrap" >
-            {[
-              "/images/a.png",
-              "/images/b.png",
-              "/images/c.png",
-              "/images/d.png",
-              "/images/e.png",
-              "/images/f.png",
-              "/images/g.png",
-              "/images/h.png",
-              "/images/c.png",
-              "/images/b.png",
-              "/images/d.png",
-            ].map((logo, index) => (
-              <Image key={index} src={logo} h={38} fit="contain"  />
-            ))}
-          </Group>
-        </Paper>
-      </Container>
-    </Box>
+                  <Text size="xs" c="dimmed" mt={4}>
+                    {item.activity}
+                  </Text>
+                </div> */}
+              </Group>
+            </Card>
+          ))}
+        </Group>
+      </div>
+    </Container>
   );
 }

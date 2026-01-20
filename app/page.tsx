@@ -10,6 +10,8 @@ import { CustomerList } from "../components/admin/CustomerList";
 import UserDetailsForm from "../components/admin/userDetails";
 import AdminFlow from "../components/admin/adminFlow";
 import MainHeroBanner from "../components/MainBanner";
+import CardSlider from "../components/banerslider";
+import ActivityContainer from "../components/ActivityContainer";
 
 
 
@@ -25,6 +27,7 @@ export default function HomePage() {
       <HeroBanner />
       <CategorySection />
       <MainHeroBanner/>
+      <CardSlider/>
       
 
       {/* 9 product carousels */}
@@ -39,6 +42,8 @@ export default function HomePage() {
       <ProductCarousel title="Automotive" /> */}
 
 <ProductGrid/>
+      <ActivityContainer />
+
       <Footer />
     </>
   );
