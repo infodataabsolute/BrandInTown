@@ -2,6 +2,7 @@
 
 import {
   Card,
+<<<<<<< HEAD
   Text,
   Title,
   Group,
@@ -9,11 +10,17 @@ import {
   Badge,
   Container,
   Box,
+=======
+  Container,
+  Group,
+  Image,
+>>>>>>> 80ca922 (Initial commit)
 } from "@mantine/core";
 import { useEffect, useRef } from "react";
 
 export default function StoreActivityFeed() {
   const activities = [
+<<<<<<< HEAD
     {
       store: "Reliance Trends",
       activity: "12 customers shopping now",
@@ -43,6 +50,25 @@ export default function StoreActivityFeed() {
   ];
 
   // duplicate list for infinite scroll
+=======
+    { store: "Reliance Trends", image: "/images/1.png" },
+    { store: "DMart", image: "/images/1.png" },
+    { store: "Zudio", image: "/images/1.png" },
+    { store: "Food Court", image: "/images/1.png" },
+    { store: "Pantaloons", image: "/images/1.png" },
+    { store: "Reliance Trends", image: "/images/1.png" },
+    { store: "DMart", image: "/images/1.png" },
+    { store: "Zudio", image: "/images/1.png" },
+    { store: "Food Court", image: "/images/1.png" },
+    { store: "Pantaloons", image: "/images/1.png" },
+    { store: "Reliance Trends", image: "/images/1.png" },
+    { store: "DMart", image: "/images/1.png" },
+    { store: "Zudio", image: "/images/1.png" },
+    { store: "Food Court", image: "/images/1.png" },
+    { store: "Pantaloons", image: "/images/1.png" },
+  ];
+
+>>>>>>> 80ca922 (Initial commit)
   const list = [...activities, ...activities];
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -60,12 +86,17 @@ export default function StoreActivityFeed() {
         scroll = 0;
         el.scrollLeft = 0;
       }
+<<<<<<< HEAD
     }, 20); // speed
+=======
+    }, 20);
+>>>>>>> 80ca922 (Initial commit)
 
     return () => clearInterval(interval);
   }, []);
 
   return (
+<<<<<<< HEAD
     <>
     
       
@@ -132,11 +163,45 @@ export default function StoreActivityFeed() {
                   </Text>
                   </div> */}
               </Group>
+=======
+    <Container size="100%" py="xl">
+      {/* Scroll Wrapper */}
+      <div
+        ref={scrollRef}
+        style={{
+          overflowX: "hidden",
+          width: "100%",
+        }}
+      >
+        <Group wrap="nowrap" gap="md">
+          {list.map((item, index) => (
+            <Card
+              key={index}
+              padding={0}
+              radius="md"
+              style={{
+                width: "260px",        // FIXED WIDTH
+                height: "160px",       // FIXED HEIGHT
+                flexShrink: 0,         // VERY IMPORTANT
+                overflow: "hidden",
+              }}
+            >
+              <Image
+                src={item.image}
+                alt={item.store}
+                w="100%"
+                h="100%"
+                fit="cover"
+              />
+>>>>>>> 80ca922 (Initial commit)
             </Card>
           ))}
         </Group>
       </div>
     </Container>
+<<<<<<< HEAD
           </>
+=======
+>>>>>>> 80ca922 (Initial commit)
   );
 }

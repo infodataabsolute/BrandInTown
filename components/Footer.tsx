@@ -109,12 +109,21 @@ export default function Footer() {
           {/* 3. Categories Section */}
           <Stack gap="xs" align={stackAlign}>
             <Text fw={700}>Categories</Text>
+<<<<<<< HEAD
     <Anchor c="#1A1A1A" href="/#fashion">Fashion, Accessories & Beauty</Anchor>
 <Anchor  c="#1A1A1A" href="/#home-decor">Home Decor</Anchor>
 <Anchor  c="#1A1A1A" href="/#appliances">Home Appliance</Anchor>
 <Anchor  c="#1A1A1A" href="/#jewellery">Jewellery</Anchor>
 <Anchor  c="#1A1A1A" href="/#sports">Sports</Anchor>
 {/* <Anchor  c="#1A1A1A" href="/#gadgets">Personal Gadgets</Anchor> */}
+=======
+    <Anchor c="#1A1A1A"  size="sm" href="/Stores">Fashion, Accessories & Beauty</Anchor>
+<Anchor  c="#1A1A1A"  size="sm" href="/Stores">Home Decor</Anchor>
+<Anchor  c="#1A1A1A"  size="sm" href="/Stores">Home Appliance</Anchor>
+<Anchor  c="#1A1A1A"  size="sm" href="/Stores">Jewellery</Anchor>
+<Anchor  c="#1A1A1A"  size="sm" href="/Stores">Sports</Anchor>
+{/* <Anchor  c="#1A1A1A"  size="sm" href="/#gadgets">Personal Gadgets</Anchor> */}
+>>>>>>> 80ca922 (Initial commit)
           </Stack>
 
           {/* 4. Support Section */}

@@ -137,6 +137,49 @@ export default function StoreActivityFeed() {
       activity: "Limited stock alert",
       image: "/images/g.png",
     },
+<<<<<<< HEAD
+=======
+    {
+      store: "Reliance Trends",
+      activity: "12 customers shopping now",
+      image: "/images/a.png",
+    },
+    {
+      store: "DMart",
+      activity: "Flash offer on groceries",
+      image: "/images/b.png",
+    },
+    {
+      store: "Zudio",
+      activity: "New arrivals launched",
+      image: "/images/c.png",
+    },
+    {
+      store: "Food Court",
+      activity: "High footfall detected",
+      image: "/images/d.png",
+    },
+    {
+      store: "Pantaloons",
+      activity: "3 orders placed recently",
+      image: "/images/e.png",
+    },
+    {
+      store: "INOX Mall",
+      activity: "Movie tickets selling fast",
+      image: "/images/f.png",
+    },
+    {
+      store: "Croma",
+      activity: "Electronics demo running",
+      image: "/images/d.png",
+    },
+    {
+      store: "Nike Store",
+      activity: "Limited stock alert",
+      image: "/images/g.png",
+    },
+>>>>>>> 80ca922 (Initial commit)
   ];
 
   // duplicate list for infinite scroll
@@ -163,7 +206,11 @@ export default function StoreActivityFeed() {
   }, []);
 
   return (
+<<<<<<< HEAD
     <Container size="xl" py="xl">
+=======
+    <Container size="xxl" py="xl">
+>>>>>>> 80ca922 (Initial commit)
       {/* <Title order={3} mb="sm">
         🔥 Live Activity Near You
       </Title>
